@@ -40,6 +40,11 @@ import Modal from './components/Modal';
       provider && loadProvider();
     },[])
     return (
+      <>
+      {!modalOpen && (<button className='share' onClick={() => setModalOpen(true)}> Share 
+      </button>)}{" "}
+      {modalOpen && (
+      <Modal setModalOpen={setModalOpen} contract={contract} /> )}
       <div className="App">
        <h1 className='mainHeading'>Decentralized file Upload System </h1>
       
@@ -57,6 +62,7 @@ import Modal from './components/Modal';
        contract={contract}
       />
       </div>
+      </>
     );
   }
 
